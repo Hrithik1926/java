@@ -1,20 +1,18 @@
-package Practice4;
-
-import java.util.Scanner;
+import java.util.*;
 
 public class LeapYear {
     public static void main(String[] args) {
-
-
-        Scanner input = new Scanner(System.in);
-        int year = input.nextInt();
-        boolean x=year%4==0;
-        boolean y=year%100!=0;
-        boolean z=year%400==0&&year%100==0;
-        if (x&&(y||z)){
-            System.out.println("Leap Year ");
-        }else {
-            System.out.println("Not Leap Year");
+        Scanner sc=new Scanner(System.in);
+        int Year=sc.nextInt();
+        boolean x=(Year%4==0);
+        boolean y=(Year%100!=0);
+        boolean z=((Year%400==0)&& (Year%100==0));
+        if (x && (y||z)){
+            System.out.println("Leap Year");
         }
+        else {
+            System.out.println("not Leap year");
+        }
+    }
+}
 
-}}
