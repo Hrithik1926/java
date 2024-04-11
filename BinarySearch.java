@@ -1,27 +1,30 @@
-import java.util.Scanner;
+package ArrayPractice;
 
 public class BinarySearch {
-    public static int binarySearch(int num[], int key) {
-        int start = 0, end = num.length - 1;
-        while (start <= end) {
+    public static int  subArray(int a[],int key) {
+        int start = 0, end = a.length - 1;
+        while (start < end) {
             int mid = (start + end) / 2;
-
-            if (num[mid] == key) {
+            if (a[mid] == key) {
                 return mid;
-            }
-            if (num[mid] < key) {//Right Condition in which Start is increase
-                start += 1;
-            } else {
-                end -= 1;
-            }
+            } else if (a[mid] > key) {
+                end--;
 
+            } else {
+                start++;
+            }
         }
         return -1;
     }
-
     public static void main(String[] args) {
-        int num[]={2,3,4,6,7,9,14,16,18,19};
-        int key=3;
-        System.out.println(binarySearch(num,key));
+        int a[]={1,2,3,6,9,8,10,11};
+        int key=100;
+        int index=subArray(a,key);
+        if (index==-1){
+            System.out.println("Not found");
+        }else {
+            System.out.println(key+" is found at index of :"+index);
+        }
+
     }
 }

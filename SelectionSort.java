@@ -1,26 +1,33 @@
-public class SelectionSort {
-    public static void selectionSort(int num[]){
-        for (int i=0;i<num.length-1;i++){
-            int minimum=i;
-            for (int j=i+1;j< num.length;j++){
-                if (num[minimum]>num[j]){
-                    minimum=j;
-                }
-            }
-            int temp=num[minimum];
-            num[minimum]=num[i];
-            num[i]=temp;
+package ArrayPractice;
 
+public class SelectionSort {
+    public static void  selection(int num[]) {
+        for (int i = 0; i < num.length - 1; i++) {
+            int minimum=i;
+            for (int j = i + 1; j < num.length - 1; j++) {
+if (num[minimum]>num[j]){
+        minimum=j;
+}
+int temp=num[minimum];
+num[minimum]=num[i];
+num[i]=temp;
+            }
         }
+//        return -1;
     }
-    public static void printf(int num[]){
-        for (int i=0;i< num.length;i++){
+
+    public static void printSelectionSort(int num[]) {
+        for (int i = 0; i < num.length; i++) {
             System.out.print(num[i]+" ");
         }
     }
+
     public static void main(String[] args) {
-        int num[]={5,8,3,9,2,7,6,1};
-        selectionSort(num);
-printf(num);
+
+
+        int num[] = {9, 6, 4, 5, 2, 3, 6, 7, 1, 22, 45, 87, 95, 65};
+selection(num);
+printSelectionSort(num);
+
     }
 }
